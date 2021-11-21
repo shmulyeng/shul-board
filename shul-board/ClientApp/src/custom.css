@@ -1,0 +1,195 @@
+@font-face {
+    font-family: tehilla;
+    src: url(./assets/TehilaRegular.TTF);
+}
+
+@font-face {
+    font-family: tehilla;
+    src: url(./assets/tehilabold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: livorna;
+    src: url(./assets/FbwLivorna.otf);
+}
+
+@font-face {
+    font-family: livorna;
+    src: url(./assets/FbwLivornaBold.otf);
+    font-weight: bold;
+}
+
+body {
+    font-family: tehilla;
+}
+
+.topContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    background-image: url("./assets/board-back.jpeg");
+    background-size: cover;
+}
+
+.topContaineritem {
+    flex: 0 0 auto;
+    margin: .5em;
+}
+
+.rowContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: auto;
+    align-content: flex-start;
+}
+
+.rowContainerItem {
+    flex: 0 0 auto;
+    margin: .1em;
+}
+
+.columnContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: auto;
+    align-content: flex-start;
+}
+
+.columnContainerItem {
+    flex: 0 0 auto;
+    margin: .1em;
+}
+
+.fullPage {
+    height: 100vh;
+    width: 100vw;
+}
+
+.topRow {
+    height: 7em;
+}
+
+.middleRow {
+    flex-grow: 1;
+}
+
+.bottomRow {
+    min-height: 7em;
+    align-content: stretch;
+}
+
+.clockColumn {
+    justify-content: space-around;
+}
+
+.panel {
+    border: 5px solid #95a5a6;
+    border-radius: 25px;
+    background-color: white;
+    padding: 1em;
+    height: 100%;
+}
+/* .zmanimPanel {
+  margin-left: 140px;
+  margin-top: 130px;
+}
+
+.schedulePanel {
+  margin-left: 140px;
+  margin-top: 130px;
+} */
+
+.scheduleContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    min-width: 26em;
+}
+
+.scheduleitem {
+    flex: 0 0 auto;
+}
+
+.scheduleItemDescription {
+    text-align: center;
+}
+
+.scheduleGroupName {
+    font-size: xxx-large;
+    font-weight: 500;
+    text-align: center;
+}
+
+.scheduleItemNameRow {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: auto;
+    align-content: flex-start;
+}
+
+.scheduleItemNameRowItem {
+    flex: 0 0 auto;
+    margin: .1em;
+    font-size: xx-large;
+}
+
+.timeSoon {
+    color: red;
+}
+
+.dottedLine {
+    flex-grow: 1;
+    padding: .5em;
+}
+
+.dottenLineInner {
+    height: 100%;
+    border-bottom-style: dotted;
+}
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+code {
+    color: #e01a76;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.textRtl {
+    text-align: right;
+}
+
+.digitalClockWrapper {
+    margin-top: 300px;
+}
+
+.digitalClock {
+    font-size: 6em;
+}
