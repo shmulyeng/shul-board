@@ -10,6 +10,10 @@ import moment from 'moment';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export class Home extends Component {
     static displayName = Home.name;
@@ -70,16 +74,27 @@ export class Home extends Component {
     }
 
     render() {
+        const settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            adaptiveHeight: true,
+            arrows: false,
+            pauseOnHover: true,
+            initialSlide: 0
+        };
+
         let contents = this.state?.announcementsLoading
             ? <p><em>Loading...</em></p>
             : this.renderAnnouncements(this.state?.announcements)
 
-
+        console.log(contents);
         return (
-            <this.AutoplaySlider play={true}
-                cancelOnInteraction={true}
-                interval={15000} bullets={false} organicArrows={false} fillParent={true}>
-
+            <Slider {...settings}>
                 <div className='topContainer fullPage'>
                     <div className='topContaineritem rowContainer topRow'>
                     </div>
@@ -104,12 +119,20 @@ export class Home extends Component {
                     </div>
 
                 </div>
-            </this.AutoplaySlider>
+                {this.state?.announcementsLoading ? '' :
+                    this.state?.announcements.map(announcement =>
+                        <div key={announcement.id} className="announcementSlide">
+                            <AnnouncementItem key={announcement.id} name={announcement.name} description={announcement.description} />
+                        </div>
+                    )
+                }
+                {/*<Announcements announcements={this.state?.announcements} loading={this.state.announcementsLoading} />*/}
+            </Slider>
         );
     }
 
     async populateZmanimData() {
-        const response = await fetch('zmanim/' + this.state.queryDate);
+        const response = await fetch('api/zmanim/' + this.state.queryDate);
         const data = await response.json();
         this.setState({
             zmanim: data.zmanim,
@@ -121,19 +144,19 @@ export class Home extends Component {
     }
 
     async populateCalendarData() {
-        const response = await fetch('calendar/' + (this.state.afterShkia ? this.state.tomorrowDate : this.state.queryDate));
+        const response = await fetch('api/calendar/' + (this.state.afterShkia ? this.state.tomorrowDate : this.state.queryDate));
         const data = await response.json();
         this.setState({ calendar: data.calendar, calendarLoading: false });
     }
 
     async populateScheduleData() {
-        const response = await fetch('schedulegroup/active/' + this.state.queryDate);
+        const response = await fetch('api/schedulegroup/active/' + this.state.queryDate);
         const data = await response.json();
         this.setState({ schedule: data, scheduleLoading: false });
     }
 
     async populateAnnouncementData() {
-        const response = await fetch('announcements/Active/' + this.state.queryDate);
+        const response = await fetch('api/announcements/Active/' + this.state.queryDate);
         const data = await response.json();
         console.log(data);
         this.setState({ announcements: data, announcementsLoading: false });

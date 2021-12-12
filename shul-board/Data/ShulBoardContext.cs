@@ -1,6 +1,4 @@
-﻿using Duende.IdentityServer.EntityFramework.Options;
-using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using shul_board.Data.Base;
 using shul_board.Models;
@@ -8,10 +6,10 @@ using System.Reflection;
 
 namespace shul_board.Data
 {
-    public class ShulBoardContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class ShulBoardContext : DbContext
     {
-        public ShulBoardContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
-            : base(options, operationalStoreOptions)
+        public ShulBoardContext(DbContextOptions options)
+            : base(options)
         {
 
         }

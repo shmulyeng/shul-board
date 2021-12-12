@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using shul_board.Data;
 
@@ -11,9 +12,10 @@ using shul_board.Data;
 namespace shul_board.Migrations
 {
     [DbContext(typeof(ShulBoardContext))]
-    partial class ShulBoardContextModelSnapshot : ModelSnapshot
+    [Migration("20211128185552_remove identity")]
+    partial class removeidentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

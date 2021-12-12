@@ -17,7 +17,7 @@ using shul_board.Services;
 namespace shul_board.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ZmanimController : ControllerBase
     {
         private ZmanimService zmanimService;

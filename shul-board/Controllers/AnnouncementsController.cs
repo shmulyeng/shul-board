@@ -10,7 +10,7 @@ using shul_board.Services;
 
 namespace shul_board.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AnnouncementsController : BaseEntityController<Announcement>
     {

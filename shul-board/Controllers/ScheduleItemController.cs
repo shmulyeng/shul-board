@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace shul_board.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ScheduleItemController : BaseEntityController<ScheduleItem>
     {

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace shul_board.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ScheduleGroupController : BaseEntityController<ScheduleGroup>
     {
         private ScheduleGroupService scheduleGroupService;
