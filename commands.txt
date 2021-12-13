@@ -1,0 +1,8 @@
+update db
+dotnet ef database update
+
+build
+dotnet build
+
+publish
+dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -o c:\inetpub\wwwroot\shul-board
