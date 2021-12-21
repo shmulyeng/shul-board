@@ -65,7 +65,7 @@ export class Home extends Component {
                 {this.state?.announcementsLoading ? '' :
                     announcements.map(announcement =>
                         <div key={announcement.id}>
-                            <AnnouncementItem key={announcement.id} name={announcement.name} description={announcement.description} />
+                            <AnnouncementItem key={announcement.id} announcement={announcement} />
                         </div>
                     )
                 }
@@ -80,12 +80,12 @@ export class Home extends Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 3000,
             adaptiveHeight: true,
             arrows: false,
             pauseOnHover: true,
-            initialSlide: 0
+            initialSlide: 1
         };
 
         let contents = this.state?.announcementsLoading
@@ -122,7 +122,7 @@ export class Home extends Component {
                 {this.state?.announcementsLoading ? '' :
                     this.state?.announcements.map(announcement =>
                         <div key={announcement.id} className="announcementSlide">
-                            <AnnouncementItem key={announcement.id} name={announcement.name} description={announcement.description} />
+                            <AnnouncementItem key={announcement.id} announcement={announcement} />
                         </div>
                     )
                 }

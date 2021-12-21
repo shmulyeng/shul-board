@@ -11,6 +11,11 @@ namespace shul_board.Data
         public string Name { get; set; }
         public string Description { get; set; }
         public int Sort { get; set; }
+        public string BackgroundImage { get; set; }
+        public int? Top { get; set; }
+        public int? Left { get; set; }
+        public int? Width { get; set; }
+        public int? Height { get; set; }
 
     }
 }
