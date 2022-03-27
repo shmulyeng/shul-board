@@ -74,7 +74,7 @@ body {
 }
 
 .topRow {
-    height: 7em;
+    height: 5em;
 }
 
 .middleRow {
@@ -85,6 +85,13 @@ body {
     min-height: 7em;
     align-content: stretch;
 }
+
+.bottomRowItem {
+    font-size: xxx-large;
+    font-weight: 500
+}
+
+
 
 .clockColumn {
     justify-content: space-around;
@@ -106,7 +113,7 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
-    min-width: 26em;
+    min-width: 35em;
 }
 
 .scheduleitem {
@@ -115,11 +122,13 @@ body {
 
 .scheduleItemDescription {
     text-align: center;
+    font-size: xx-large;
+    font-weight: 600
 }
 
 .scheduleGroupName {
     font-size: xxx-large;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -134,8 +143,8 @@ body {
 
 .scheduleItemNameRowItem {
     flex: 0 0 auto;
-    margin: .1em;
-    font-size: xx-large;
+    margin: 0 .1em;
+    font-size: xxx-large;
 }
 
 .timeSoon {
@@ -204,4 +213,8 @@ code {
 
 .digitalClock {
     font-size: 6em;
+}
+
+.slick-list {
+    height:100vh;
 }

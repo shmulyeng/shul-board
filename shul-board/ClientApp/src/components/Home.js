@@ -28,7 +28,7 @@ export class Home extends Component {
             calendar: null, calendarLoading: true,
             announcements: null, announcementsLoading: true,
             afterShkia: false,
-            queryDate: moment().format('yyyy-MM-DD'),
+            queryDate: moment().format('yyyy-MM-DD HH:mm:ss'),
             tomorrowDate: moment().add(1, 'days').format('yyyy-MM-DD'),
             time: moment()
         };
@@ -82,10 +82,11 @@ export class Home extends Component {
             slidesToScroll: 1,
             autoplay: false,
             autoplaySpeed: 3000,
-            adaptiveHeight: true,
+            adaptiveHeight: false,
             arrows: false,
             pauseOnHover: true,
-            initialSlide: 1
+            initialSlide: 0,
+            className: "slide"
         };
 
         let contents = this.state?.announcementsLoading
@@ -138,7 +139,7 @@ export class Home extends Component {
             zmanim: data.zmanim,
             zmanimLoading: false,
             afterShkia: (moment(data.zmanim.shkia) < moment() ? true : false),
-            queryDate: this.state?.time.format('yyyy-MM-DD'),
+            queryDate: this.state?.time.format('yyyy-MM-DD HH:mm:ss'),
             tomorrowDate: this.state?.time.add(1, 'days').format('yyyy-MM-DD')
         });
     }

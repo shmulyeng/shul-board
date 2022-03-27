@@ -5,9 +5,9 @@ export default function Calendar({ calendar, loading }) {
     const renderCalendar = (calendar) => {
         return (
             <div className='panel'>
-                <h1>
+                <div className='bottomRowItem'>
                     {calendar.hebrewDate} - {calendar.daf} - {calendar.parsha} {calendar.yomTov? ' - ' + calendar.yomTov:''}
-                </h1>
+                </div>
             </div>
         );
     }
