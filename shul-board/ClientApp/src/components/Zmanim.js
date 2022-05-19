@@ -15,7 +15,6 @@ export default function Zmanim({ zmanim, loading }) {
                     <TimeItem name='סוף זמן תפילה מג"א' time={zmanim.sofZmanTefilaMGA} showUpcoming='true' />
                     <TimeItem name='סוף זמן תפילה גר"א' time={zmanim.sofZmanTefilaGRA} showUpcoming='true' />
                     <TimeItem name='חצות' time={zmanim.chatzos} showUpcoming='true' />
-                    {moment(zmanim.candleLighting, "YYYY-MM-DDTHH:mm:ss").day() > 4 ? <TimeItem name='הדלקת נרות' time={zmanim.candleLighting} showUpcoming='true' /> : ""}
                     <TimeItem name='שקיעה' time={zmanim.shkia} showUpcoming='true' />
                     <TimeItem name='צאת הכוכבים' time={zmanim.tzeis60} showUpcoming='true' />
                     <TimeItem name='צאת הכוכבים לר"ת' time={zmanim.tzeis72} showUpcoming='true' />

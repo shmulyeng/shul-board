@@ -80,11 +80,11 @@ export class Home extends Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 3000,
+            autoplay: true,
+            autoplaySpeed: 10000,
             adaptiveHeight: false,
             arrows: false,
-            pauseOnHover: true,
+            pauseOnHover: false,
             initialSlide: 0,
             className: "slide"
         };
