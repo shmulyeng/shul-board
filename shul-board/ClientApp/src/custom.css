@@ -79,6 +79,7 @@ body {
 
 .middleRow {
     flex-grow: 1;
+    max-height: 75%
 }
 
 .bottomRow {
@@ -108,12 +109,12 @@ body {
 
 .scheduleContainer {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
     min-width: 35em;
+    max-width: 35em;
 }
 
 .scheduleitem {
